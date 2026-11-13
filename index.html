@@ -121,7 +121,7 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 255, 255, .25);
             padding: 22px 28px;
             pointer-events: auto;
-            font-size: 18px
+            font-size: 17px
         }
 
         .card small {
@@ -258,7 +258,7 @@
             transform: translateX(-50%);
             max-width: 88vw;
             text-align: center;
-            font-size: 16px;
+            font-size: 17px;
             font-style: italic;
             padding: 14px 30px;
             border-radius: 999px;
@@ -355,7 +355,7 @@
             <button id="muteBtn" class="ghost icon" aria-label="Sound" title="Sound"></button>
             <div class="card" style="text-align:left;padding:14px 18px;font-size:15px;max-width:230px">
                 <div id="heldTxt">In your hands: 0</div><small>Reflect, then choose</small>
-                <div style="margin-top:10px;text-align:center"><button id="giveBtn" disabled>[ SPACE ]<br>GIVE THANKS</button></div>
+                <div style="margin-top:10px;text-align:center"><button id="giveBtn" disabled><span style="display:block;font-size:11px;font-weight:400;opacity:.7">[ SPACE ]</span>GIVE THANKS</button></div>
             </div>
         </div>
     </div>
@@ -364,11 +364,11 @@
         <div class="card">
             <b>Give thanks</b>
             <p id="giveP" style="margin:6px 0 0;opacity:.9"></p>
-            <p style="margin:8px 0 0;font-style:italic;font-size:16px;opacity:.8">Salmon is abundance: a life given so
+            <p style="margin:8px 0 0;font-style:italic;font-size:17px;opacity:.8">Salmon is abundance: a life given so
                 that families and communities may live.</p>
             <textarea id="note" maxlength="140"
                 placeholder="Words of thanks to the salmon and the river. Gratitude shared gives the run a little extra strength."></textarea>
-            <div id="noteErr" style="min-height:1.4em;margin:0 0 18px;padding:0 4px;color:#ffd6c8;font-size:16px"></div>
+            <div id="noteErr" style="min-height:1.4em;margin:0 0 18px;padding:0 4px;color:#b3261e;font-size:15px"></div>
             <div class="row"><button class="ghost" id="later">Not yet</button><button id="doGive">Give thanks</button>
             </div>
         </div>
@@ -381,7 +381,7 @@
                 Take without gratitude and the river slowly empties. Pause, reflect, and choose.</p>
             <p style="opacity:.85">Salmon is a symbol of abundance, prosperity and the cycle of life: a foundational
                 food that sustains families and communities, giving its life so others may live.</p>
-            <p style="opacity:.75;font-size:13px">Inspired by the reciprocal relationship many Indigenous peoples of
+            <p style="opacity: .75;font-size:15px">Inspired by the reciprocal relationship many Indigenous peoples of
                 Canada hold with salmon, bears and the rivers that sustain them.</p>
             <div class="row"><button id="begin">Step to the water</button></div>
         </div>
@@ -628,7 +628,7 @@
             $('note').value = ''; $('give').classList.add('hidden'); modal = false; hud(); say(note.length > 2 ? 'Your words drift downstream. Gratitude grows the abundance.' : 'Thank you, Kontihnawa:ra. Abundance is a cycle: what is given is received.', 4200)
         }
 
-        function addLog(txt) { const d = document.createElement('div'); d.textContent = '“' + txt.slice(0, 80) + '”'; d.style.cssText = 'font-style:italic;margin-top:10px;font-size:18px;opacity:.9;line-height:1.4'; d.style.animationDelay = (-Math.random() * 7) + 's, 0s'; d.onanimationend = e => { if (e.animationName === 'logfade') d.remove() }; const L = $('logList'); L.prepend(d); while (L.children.length > 12) L.lastChild.remove(); $('logCard').style.display = 'block' }
+        function addLog(txt) { const d = document.createElement('div'); d.textContent = '“' + txt.slice(0, 80) + '”'; d.style.cssText = 'font-style:italic;margin-top:10px;font-size:17px;opacity:.9;line-height:1.4'; d.style.animationDelay = (-Math.random() * 7) + 's, 0s'; d.onanimationend = e => { if (e.animationName === 'logfade') d.remove() }; const L = $('logList'); L.prepend(d); while (L.children.length > 12) L.lastChild.remove(); $('logCard').style.display = 'block' }
         function update(dt) {
             updCritters(dt);
             bearT -= dt; bearFish = Math.max(0, bearFish - dt);
