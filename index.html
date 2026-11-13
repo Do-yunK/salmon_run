@@ -661,7 +661,7 @@
             for (const f of foams) { f.r += dt * 46; f.l -= dt * 1.6 } foams = foams.filter(f => f.l > 0);
             for (const r of ripples) { r.r += (r.m - r.r) * dt * 2.4 + dt * 10; r.l -= dt * .9 } ripples = ripples.filter(r => r.l > 0);
             for (const d of drops) { d.vy += 620 * dt; d.x += d.vx * dt; d.y += d.vy * dt; d.l -= dt * 1.3 } drops = drops.filter(d => d.l > 0);
-            for (let i = 0; i < 3; i++) { if (catTgt[i] && t - catUpAt[i] > 3) catTgt[i] = 0; catDroop[i] += (catTgt[i] - catDroop[i]) * Math.min(1, dt * (catTgt[i] ? 14 : 4)) }
+            for (let i = 0; i < 3; i++) { if (catTgt[i] && t - catUpAt[i] > 6) catTgt[i] = 0; catDroop[i] += (catTgt[i] - catDroop[i]) * Math.min(1, dt * (catTgt[i] ? 14 : 4)) }
             for (const l of leaves) { l.z -= .025 * dt; l.ph += dt } leaves = leaves.filter(l => { if (l.z > -.05) return true; addLog(l.txt); return false });
             if (toastT > 0 && (toastT -= dt * 1000) <= 0) $('toast').classList.remove('on');
         }
